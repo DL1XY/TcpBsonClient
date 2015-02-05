@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{47E8F009-9BAD-4F23-B6DD-8D7D43FB6E36}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>TcpBsonClient</RootNamespace>
+    <AssemblyName>TcpBsonClient</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <ConsolePause>False</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <ConsolePause>False</ConsolePause>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Compile Include="BSONClient.cs" />
+    <Compile Include="SimpleBSON.cs" />
+    <Compile Include="commands\CmdManager.cs" />
+    <Compile Include="commands\IObserver.cs" />
+    <Compile Include="commands\client\BaseClientCmd.cs" />
+    <Compile Include="commands\client\ClientCmdMessageException.cs" />
+    <Compile Include="commands\client\IClientCmd.cs" />
+    <Compile Include="commands\server\BaseServerCmd.cs" />
+    <Compile Include="commands\server\IServerCmd.cs" />
+    <Compile Include="commands\server\ServerCmdLogout.cs" />
+    <Compile Include="parser\ByteStreamParser.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="commands\" />
+    <Folder Include="parser\" />
+  </ItemGroup>
+</Project>
